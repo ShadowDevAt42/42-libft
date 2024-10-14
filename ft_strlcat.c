@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdi-tria <fdi-tria@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: fdi-tria <fdi-tria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 14:13:53 by fdi-tria          #+#    #+#             */
-/*   Updated: 2024/10/13 22:36:18 by fdi-tria         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:21:18 by fdi-tria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)

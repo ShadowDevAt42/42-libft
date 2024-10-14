@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdi-tria <fdi-tria@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: fdi-tria <fdi-tria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:53:22 by fdi-tria          #+#    #+#             */
-/*   Updated: 2024/10/13 21:55:05 by fdi-tria         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:25:13 by fdi-tria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+static char	*ft_alloc_empty(void)
 {
-	size_t	len;
+	char	*substr;
 
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
+	substr = malloc(1);
+	if (substr)
+		substr[0] = '\0';
+	return (substr);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -33,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
-		return (malloc(1));
+		return (ft_alloc_empty());
 	if (len > s_len - start)
 		len = s_len - start;
 	substr = malloc(sizeof(char) * (len + 1));

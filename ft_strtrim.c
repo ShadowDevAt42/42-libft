@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdi-tria <fdi-tria@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: fdi-tria <fdi-tria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:04:20 by fdi-tria          #+#    #+#             */
-/*   Updated: 2024/10/13 22:05:40 by fdi-tria         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:21:18 by fdi-tria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_isset(char c, const char *set)
 {

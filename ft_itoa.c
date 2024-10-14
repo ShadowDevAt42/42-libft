@@ -3,57 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdi-tria <fdi-tria@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: fdi-tria <fdi-tria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:13:14 by fdi-tria          #+#    #+#             */
-/*   Updated: 2024/10/13 22:50:24 by fdi-tria         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:21:48 by fdi-tria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_numlen(int n)
+static int	ft_numcount(int n)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
-}
-
-static void	ft_convert(char *str, int n, int len)
-{
-	int	sign;
-
-	sign = 1;
+	i = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
-		str[0] = '-';
-		sign = -1;
+		i++;
+		n *= -1;
 	}
-	str[len] = '\0';
-	while (len > 0 && (n || sign == -1))
+	while (n != 0)
 	{
-		str[--len] = (n % 10) * sign + '0';
-		n = n / 10;
+		i++;
+		n /= 10;
 	}
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		len;
+	char			*str;
+	int				len;
+	unsigned int	num;
 
-	len = ft_numlen(n);
+	len = ft_numcount(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	ft_convert(str, n, len);
+	str[len] = '\0';
+	num = 0;
+	if (n == 0)
+		str[0] = '0';
+	else if (n < 0)
+	{
+		str[0] = '-';
+		num = (unsigned int)(-n);
+	}
+	else
+		num = (unsigned int)n;
+	while (num > 0)
+	{
+		str[--len] = '0' + (num % 10);
+		num /= 10;
+	}
 	return (str);
 }

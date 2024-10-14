@@ -6,12 +6,11 @@
 /*   By: fdi-tria <fdi-tria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 00:30:05 by fdi-tria          #+#    #+#             */
-/*   Updated: 2024/08/31 18:04:54 by fdi-tria         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:21:18 by fdi-tria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {

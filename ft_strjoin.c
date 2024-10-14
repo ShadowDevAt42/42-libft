@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdi-tria <fdi-tria@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: fdi-tria <fdi-tria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:01:23 by fdi-tria          #+#    #+#             */
-/*   Updated: 2024/10/13 22:02:34 by fdi-tria         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:39:26 by fdi-tria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>  // Pour malloc
-#include <stddef.h>  // Pour size_t
+#include "libft.h"
 
 static void	ft_strcpy(char *dst, const char *src, size_t *index)
 {
@@ -24,16 +23,6 @@ static void	ft_strcpy(char *dst, const char *src, size_t *index)
 		(*index)++;
 		i++;
 	}
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
